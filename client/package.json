@@ -33,7 +33,7 @@
   "eslintConfig": {
     "extends": "react-app"
   },
-  "proxy": "http://localhost:5005",
+  "proxy": "http://ec2-52-91-87-52.compute-1.amazonaws.com:5005",
   "browserslist": {
     "production": [
       ">0.2%",
