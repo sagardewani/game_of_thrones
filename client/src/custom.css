@@ -1,0 +1,117 @@
+.custom_overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left:0;
+  top:0;
+  z-index: 9;
+  background: #e4e6f1;
+  opacity: 0.5;
+}
+
+.sptb {
+  margin-top: 100px;
+}
+
+.battle-name-label {
+  padding: 10px 20px;
+  margin-top: 20px;
+  border-radius: 20px;
+  border: 1px solid black;
+  background-image: linear-gradient(45deg, #0f316d, #701713);
+  color: #fff;
+  font-weight: 500;
+  font-size: 20px;
+}
+
+.battle-card {
+  min-height: 390px;
+  max-width: 320px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  background-size: cover !important;
+  box-shadow: inset 5px 5px 10px #efefef, -3px -3px 5px #4b4b4b;
+}
+
+.battle-card.left {
+  border-bottom-left-radius: 8px;
+  border-top-right-radius: 8px;
+  transform: skewY(-10deg);
+}
+
+.battle-card.right {
+  border-bottom-left-radius: 8px;
+  border-top-left-radius: 8px;
+  transform: skewY(10deg);
+  box-shadow: inset -5px 5px 10px #efefef, 3px -3px 5px #4b4b4b;
+}
+
+.vs-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 90px;
+  height: 90px;
+  transform: translate(-50%, -50%);
+}
+
+.crown {
+  background: url('./assets/crown.svg');
+}
+
+.battle-card .text{
+  margin-left:30px;
+  margin-right: 10px;
+  margin-bottom: 5px;
+  margin-top: 1em;
+  color: #fff;
+  word-break: break-all;
+}
+.battle-card .text:first-child {
+  margin-top: 60px;
+}
+
+.battle-card .text.outcome {
+  text-align: center;
+  margin-right: 30px;
+  margin-top: 1em;
+}
+
+.fixed-bar {
+  position: absolute;
+  left: 25px;
+  top: 10px;
+  z-index: 10;
+  width: calc(100% - 50px);
+  padding: 10px;
+  height: calc(100% - 20px);
+  background: #333;
+  opacity: 0.8;
+}
+
+@media(min-width: 992px) {
+  .w-lg-60 {
+    width: 60%;
+  }
+}
+
+@media(min-width: 768px) {
+  .w-md-80, .w-lg-60 {
+    width: 80%;
+  }
+}
+
+@media(max-width: 767px) {
+  .w-md-80, .w-lg-60 {
+    width: 100%;
+  }
+  .battle-name-label {
+    padding: 10px 15px;
+    font-size: 1em;
+  }
+  .bg-vs {
+    margin-left: -15px;
+    margin-right: -15px;
+  }
+}
