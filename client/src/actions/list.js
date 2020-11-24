@@ -7,6 +7,8 @@ import {
   RESET_BATTLE,
 } from "actions/types";
 
+const server_url = `http://ec2-52-91-87-52.compute-1.amazonaws.com:5005`;
+
 // Get Battle List
 export const getList = () => async dispatch => {
   const config = {
@@ -16,7 +18,7 @@ export const getList = () => async dispatch => {
   };
   try {
     dispatch(loadingOnList());
-    const res = await axios.get(`/list`, config);
+    const res = await axios.get(`${server_url}/list`, config);
     dispatch({
       type: SHOW_BATTLE_LIST,
       payload: res.data.response,
@@ -34,7 +36,7 @@ export const getCount = () => async dispatch => {
   };
   try {
     dispatch(loadingOnCount());
-    const res = await axios.get(`/count`, config);
+    const res = await axios.get(`${server_url}/count`, config);
     dispatch({
       type: SHOW_BATTLE_COUNT,
       payload: res.data.response

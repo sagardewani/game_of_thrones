@@ -9,6 +9,8 @@ import {
   UPDATE_SEARCH_BATTLE_ID,
 } from "actions/types";
 
+const server_url = `http://ec2-52-91-87-52.compute-1.amazonaws.com:5005`;
+
 // Search Battle
 export const searchBattle = (searchParams) => async dispatch => {
   const config = {
@@ -19,7 +21,7 @@ export const searchBattle = (searchParams) => async dispatch => {
   try {
     config.params = searchParams;
     dispatch(loadingOnSearch());
-    const res = await axios.get(`/search`, config);
+    const res = await axios.get(`${server_url}/search`, config);
     
     dispatch({
       type: UPDATE_SEARCH_PARAMS,
@@ -55,7 +57,7 @@ export const getSearchedBattle = (battle_id) => async dispatch => {
   };
   try {
     dispatch(loadingOnSumbitSearch());
-    const res = await axios.get(`/${battle_id}`, config);
+    const res = await axios.get(`${server_url}/${battle_id}`, config);
     dispatch({
       type: SHOW_SEARCHED_BATTLE,
       payload: res.data.response
